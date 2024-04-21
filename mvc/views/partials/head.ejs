@@ -5,6 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rishtay Wali</title>
+    <link rel="icon" type="image/jpg" href="../images/logo.jpg">
+
+    <!-- <img src="../images/logo.jpg" alt="error in loading"> -->
     <!-- Google Fonts Link For Icons -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
     <link rel="stylesheet" href="style.css">
@@ -195,14 +198,14 @@ header {
 
 .login .form-details {
     padding: 0 40px;
-    background: url("images/login-img.jpg");
+    background: url("images/login.png");
     background-position: center;
     background-size: cover;
 }
 
 .signup .form-details {
     padding: 0 20px;
-    background: url("images/signup-img.jpg");
+    background: url("images/signup-image.jpg");
     background-position: center;
     background-size: cover;
 }
@@ -492,4 +495,131 @@ form button:hover {
   }
 }
 
+.heading {
+    text-align: center;
+    color: #454343;
+    font-size: 30px;
+    font-weight: 700;
+    position: relative;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    z-index: 999;
+}
+.white-heading{
+    color: #ffffff;
+}
+.heading:after {
+    content: ' ';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 40px;
+    width: 180px;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    
+  
+    background-position: center;
+}
+.white-heading:after {
+    background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.heading span {
+    font-size: 18px;
+    display: flex;
+    font-weight: 700;
+}
+.white-heading span {
+    color: #ffffff;
+}
+
+#main-container {
+  max-width: 100000px;
+   margin: 10px auto; 
+  text-align: center;
+  padding: 10px;
+  background-color: #ff6b6b;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#main-heading {
+  font-size: 36px;
+  color: #fff;
+}
+
+#get-started-btn {
+  background-color: #fff;
+  color: #ff6b6b;
+  border: none;
+  padding: 10px 10px;
+  font-size: 18px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+#get-started-btn:hover {
+  background-color: #ff4444;
+  color: #fff;
+}
+
+#matrimony-service {
+  font-size: 15px;
+  color: #fff;
+  margin-top: 20px;
+}
+/* testimonals */
+
+.owl-carousel .owl-item img {
+    display: flex;
+    width: 17%;
+    float: left;
+    border: 5px solid #fff;
+    border-radius: 10px;
+    margin-left: 54px;
+    margin-right: 35px;
+    margin-top: 15px;
+  }
+  .testimonial-item.equal-height.style-6 {
+    background-color: #eee;
+    border-radius: 10px;
+    margin: 10px;
+  }
+  .cell-right {
+    text-align: center;
+    margin-right: 80px;
+    padding-top: 35px;
+    padding-bottom: 20px;
+  }
+  
+  .testimonial-name {
+    font-weight: 600;
+  }
+  .testimonial-content.quote {
+    padding: 17px 55px;
+    
+  }
+  .et_right_sidebar #main-content .container:before{
+    display: none;
+  }
+  #main-content .container {
+    padding-top: 10px;
+  }
+  i.fa.fa-quote-left {
+    padding: 0px 10px;
+    color: #999;
+  }
+  #testimonal-heading{
+    text-align: center;
+    color:#ff4444 ;
+    font-weight: 1000;
+    font-size: 40px;
+   font-family: 'Times New Roman', Times, serif;
+  }
+  
 </style>
