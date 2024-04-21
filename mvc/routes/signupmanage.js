@@ -4,13 +4,15 @@ const nodemailer = require('nodemailer');
 // Function to handle form submission
 async function handleFormSubmission(req, res) {
     try {
+        
         const email = req.body.email;
+        console.log(email);
         await sendEmail(email);
         res.send('Email sent successfully!');
     } catch (error) {
-
+        console.error('Error sending email:', req.body.email);
         console.error('Error sending email:', error);
-        res.status(500).send('Error sending email'+email);
+        res.status(500).send('Error sending email');
     }
 }
 
