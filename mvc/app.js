@@ -9,7 +9,8 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.use("/",indexRouter);
 app.listen(3000,()=>{console.log('Server is running on port 3000')});
-
+//for css
 app.use(express.static('./views'));
+
 
 
