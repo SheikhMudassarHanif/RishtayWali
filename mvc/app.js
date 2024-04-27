@@ -13,7 +13,7 @@ app.use(express.static("public"));
 app.use("/",indexRouter);
 app.listen(3000,()=>{console.log('Server is running on port 3000')});
 //for css and js files
-app.use(express.static('./views'));
+app.use(express.static('./public'));
 
 
 

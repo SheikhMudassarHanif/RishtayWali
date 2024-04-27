@@ -5,6 +5,7 @@ const showPopupBtn = document.querySelector(".login-btn");
 const formPopup = document.querySelector(".form-popup");
 const hidePopupBtn = formPopup.querySelector(".close-btn");
 const signupLoginLink = formPopup.querySelectorAll(".bottom-link a");
+ 
 
 // Show mobile menu
 hamburgerBtn.addEventListener("click", () => {
@@ -30,18 +31,17 @@ signupLoginLink.forEach(link => {
     });
 });
 
+
+
+
 $(document).ready(function(){
     $("#testimonial-slider").owlCarousel({
-        items:2,
-        itemsDesktop:[1000,2],
-        itemsDesktopSmall:[980,1],
+        items:1,
+        itemsDesktop:[1000,1],
+        itemsDesktopSmall:[979,1],
         itemsTablet:[768,1],
         pagination:true,
-        navigation:true,
-        
+        transitionStyle:"backSlide",
         autoPlay:true
     });
-  });
-  
-  
-  
+});
