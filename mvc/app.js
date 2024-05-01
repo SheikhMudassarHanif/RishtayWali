@@ -3,6 +3,7 @@ const indexRouter = require('./routes/index');
 const bodyParser = require('body-parser');
 const formController = require('./routes/signupmanage');
 
+
 var app=express();
 app.set( "view engine" , "ejs");
 app.set("views", __dirname + "/views");
@@ -22,6 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // POST route to handle form submission
 app.post('/submitsignup-form', formController.handleFormSubmission);
-
+app.post('/submit-form', formController.handleFormSubmission);
 
 
