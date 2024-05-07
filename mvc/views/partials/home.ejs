@@ -1,10 +1,10 @@
-<section class="home">
+<section class="home" id="home">
     <div class="video-container">
         <video autoplay muted loop id="myVideo">
           <source src="../video/hero-video.webm" alt="Video not found" type="video/mp4">
           Your browser does not support HTML5 video.
         </video>
-        <h2 id="trusted">Trusted Matrimony & Matchmaking Service</h2>
+        <h2 style="font-size:3vw;" id="trusted">Trusted Matrimony & Matchmaking Service</h2>
     <div class="blur-bg-overlay"></div>
     <div class="form-popup">
         <span class="close-btn material-symbols-rounded">close</span>
@@ -46,14 +46,14 @@
                         <label>Enter your email</label>
                     </div>
                     <div class="input-field">
-                        <input type="password" pattern="(?=.*\d)(?=.*[!@#$%^&*])\w{8,}" required>
+                        <input type="password" required>
                         <label>Create password</label>
                     </div>
                     <div class="policy-text">
                         <input type="checkbox" id="policy">
                         <label for="policy">
                             I agree the
-                            <a href="#" class="option">Terms & Conditions</a>
+                            <a href="#" id="pdf-link" class="option" required>Terms & Conditions</a>
                         </label>
                     </div>
                     <button type="submit">Sign Up</button>

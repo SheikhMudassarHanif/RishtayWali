@@ -37,9 +37,26 @@
   padding: 300px;
   color: white;
 }
+@media (max-width: 100px){
+    #trusted{padding: -400x;
+        margin-top: 300px;
+    }
+  
+  }
 @media (max-width: 600px){
-  #trusted{padding: 150px;}
+  #trusted{padding: 100px;
+  }
+
 }
+@media (max-width: 700px){
+    #trusted{padding: 200px;
+    }
+    .manifesto{
+        padding:10px;
+        margin-top: -100px;
+    }
+  
+  }
 
 header {
     position: fixed;
@@ -64,8 +81,13 @@ header {
     height: auto;
     z-index: -1;
   }
+  .navbar.scrolled {
+    background-color: black;
+    transition: background-color 0.3s ease;
+}
 
 .navbar {
+    
     display: flex;
     padding: 22px 0;
     align-items: center;
@@ -409,7 +431,7 @@ form button:hover {
  
   background-color: black;
   color: #fff;
-  padding: 50px;
+  padding: 40px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -419,6 +441,8 @@ form button:hover {
 .footer-right,
 .footer-center {
   flex: 1;
+  padding: 15px;
+  
 }
 
 .logo {
@@ -502,6 +526,11 @@ form button:hover {
 
   .footer-right {
     margin-top: 30px;
+    text-align: center;
+    margin-right: 40px;
+  }
+  .footer-left{
+    margin-right: 100px;
   }
   
   .social-icons {
@@ -518,13 +547,13 @@ form button:hover {
 
 .heading {
     text-align: center;
-    color: #454343;
+    color: #e6cea0;
     font-size: 30px;
     font-weight: 700;
     position: relative;
     margin-bottom: 30px;
     text-transform: uppercase;
-    z-index: 999;
+ 
 }
 .white-heading{
     color: #ffffff;
@@ -562,8 +591,7 @@ form button:hover {
    margin: 10px auto; 
   text-align: center;
   padding: 10px;
-  background-color:black;
-  /*#ff6b6b;*/
+  background-color:#e6cea0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
@@ -574,7 +602,7 @@ form button:hover {
 
 #get-started-btn {
   background-color: #fff;
-  color: #ff6b6b;
+  color: #e6cea0;
   border: none;
   padding: 10px 10px;
   font-size: 18px;
@@ -585,7 +613,7 @@ form button:hover {
 }
 
 #get-started-btn:hover {
-  background-color: #ff4444;
+  background-color: #e3b55f;
   color: #fff;
 }
 
@@ -600,15 +628,15 @@ form button:hover {
   text-align: center;
   align-items: center;
   padding: 10px;
-  color: tan;
+  color: white;
  }
- /*#3d3d3d; */
-.demo{ background:black }
+ 
+.demo{ background:#095786 }
 .testimonial{
     padding: 35px 35px;
     margin: 30px auto 30px; 
     border-radius: 0 70px 0 70px;
-    border: 5px solid #ffc33c;
+    border: 5px solid #0090ab;
     border-left: none;
     border-right: none;
     text-align: center;
@@ -639,7 +667,7 @@ form button:hover {
     margin: 0 0 7px 0;
     font-size: 20px;
     font-weight: 600;
-    color: #ffc33c;
+    color: #0090ab;
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -661,7 +689,7 @@ form button:hover {
     opacity: 0.8;
     transition: all 0.3s ease 0s;
 }
-.owl-theme .owl-controls .owl-page.active span{ background: #ffc33c; }
+.owl-theme .owl-controls .owl-page.active span{ background: #0090ab }
 
 
 

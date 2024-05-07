@@ -30,6 +30,19 @@ signupLoginLink.forEach(link => {
         formPopup.classList[link.id === 'signup-link' ? 'add' : 'remove']("show-signup");
     });
 });
+const navbar = document.querySelector("header");
+
+window.addEventListener("scroll", () => {
+    console.log("Scroll event fired!");
+    if (window.scrollY > 0) {
+        console.log("Adding scrolled class.");
+        navbar.classList.add("scrolled");
+    } else {
+        console.log("Removing scrolled class.");
+        navbar.classList.remove("scrolled");
+    }
+});
+
 
 
 
@@ -44,4 +57,95 @@ $(document).ready(function(){
         transitionStyle:"backSlide",
         autoPlay:true
     });
+});
+
+const getStartedBtn = document.getElementById("get-started-btn");
+
+
+// Function to show signup form
+function showSignupForm() {
+    // Add class to body to show popup
+    document.body.classList.add("show-popup");
+    // Add class to form-popup to show signup form
+    formPopup.classList.add("show-signup");
+}
+
+// Event listener for Get Started button
+getStartedBtn.addEventListener("click", showSignupForm);
+
+const pdfLink = document.getElementById("pdf-link");
+
+pdfLink.addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default behavior of the link
+
+    // Replace "path_to_your_pdf_file.pdf" with the actual path to your PDF file
+    const pdfFile = "terms and conditions.pdf";
+
+    // Open the PDF file in a new tab
+    window.open(pdfFile, "_blank");
+});
+
+const forgotPasswordLink = document.querySelector(".forgot-pass-link");
+
+forgotPasswordLink.addEventListener("click", () => {
+    // Hide the signup form
+    formPopup.classList.remove("show-signup");
+    
+    // Show the login form
+    formPopup.classList.add("show-login");
+
+    // Update form content for the login form
+    const loginFormContent = document.querySelector(".login .form-content");
+    loginFormContent.innerHTML = `
+        <h2>Forgot Password</h2>
+        <form action="/forgot-password" method="POST">
+            <div class="input-field">
+                <input type="email" required>
+                <label>Email</label>
+            </div>
+            <button type="submit">Submit</button>
+        </form>
+    `;
+
+    // Hide the signup form content
+    const signupFormContent = document.querySelector(".signup .form-content");
+    signupFormContent.style.display = "none";
+});
+
+// Event listener for the close button
+closePopupBtn.addEventListener("click", () => {
+    // Hide the form popup
+    document.body.classList.remove("show-popup");
+
+    // Check if the form is in the "forgot password" or "signup" state
+    if (formPopup.classList.contains("show-forgot-password") || formPopup.classList.contains("show-signup")) {
+        // Hide the forgot password form or signup form
+        formPopup.classList.remove("show-forgot-password");
+        formPopup.classList.remove("show-signup");
+
+        // Show the login form
+        formPopup.classList.add("show-login");
+
+        // Reset the form content for the login form
+        const loginFormContent = document.querySelector(".login .form-content");
+        loginFormContent.innerHTML = `
+            <h2>Login</h2>
+            <form action="/submittedsignupform" method="POST">
+                <div class="input-field">
+                    <input type="text" required>
+                    <label>Email</label>
+                </div>
+                <div class="input-field">
+                    <input type="password" required>
+                    <label>Password</label>
+                </div>
+                <a href="#" class="forgot-pass-link">Forgot password?</a>
+                <button type="submit">Log In</button>
+            </form>
+            <div class="bottom-link">
+                Don't have an account?
+                <a href="" id="signup-link">Signup</a>
+            </div>
+        `;
+    }
 });
