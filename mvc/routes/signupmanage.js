@@ -1,7 +1,11 @@
 // Import necessary modules
 const nodemailer = require('nodemailer');
+const bcrypt = require('bcrypt');
+const User = require('../models/User');
+const crypto = require('crypto');
 
-// Function to handle form submission
+console.log(User); 
+// Function to send email with Nodemailer
 async function handleFormSubmission(req, res) {
     try {
         
@@ -17,80 +21,74 @@ async function handleFormSubmission(req, res) {
 }
 
 
+// async function handleFormSubmission(req, res) {
+//     try {
+//         const { email, password } = req.body;
 
+//         // Check if password is provided
+//         if (!password) {
+//             return res.status(400).send('Password is required');
+//         }
 
+//         // Hash the password before storing it
+//         const hashedPassword = await bcrypt.hash(password, 10);
 
+//         // Insert the user into the database
+//         const user = new User({ email, password: hashedPassword });
+//         await user.save();
 
-
-// var transporter = nodemailer.createTransport({
-//     service: 'gmail',
-//     auth: {
-//       user: 'f219176@cfd.nu.edu.pk',
-//       pass: 'Mudassar@194'
+//         res.send('User registered successfully!');
+//     } catch (error) {
+//         console.error('Error registering user:', error);
+//         res.status(500).send('Error registering user');
 //     }
-//   });
-  
-//   var mailOptions = {
-//     from: 'f219176@cfd.nu.edu.pk',
-//     to: email,
-//     subject: 'Sending Email using Node.js',
-//     text: 'That was easy!'
-//   };
-  
-//   transporter.sendMail(mailOptions, function(error, info){
-//     if (error) {
-//       console.log(error);
-//     } else {
-//       console.log('Email sent: ' + info.response);
+// }
+
+
+// async function handleFormSubmission(req, res) {
+//     try {
+//         const { email, password } = req.body;
+
+//         // Check if password is provided
+//         if (!password) {
+//             return res.status(400).send('Password is required');
+//         }
+
+//         // Hash the password before storing it
+//         const hashedPassword = await bcrypt.hash(password, 10);
+
+//         // Insert the user into the database
+//         const user = new User({ email, password: hashedPassword });
+//         await user.save();
+
+//         res.send('User registered successfully!');
+//     } catch (error) {
+//         console.error('Error registering user:', error);
+//         res.status(500).send('Error registering user');
 //     }
-//   });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// }
 
 
 
 
 // Function to send email using Nodemailer
-function sendEmail(email) {
+function sendEmail(email, token) {
     return new Promise((resolve, reject) => {
-        // Create Nodemailer transporter
         let transporter = nodemailer.createTransport({
-            // Configure your email provider here
             service: 'gmail',
             auth: {
-            user: 'f219176@cfd.nu.edu.pk',
-            pass: 'Mudassar@194'
-    }
+                user: 'f219176@cfd.nu.edu.pk',
+                pass: 'Mudassar@194'
+            }
         });
 
-        // Email options
         let mailOptions = {
             from: 'f219176@cfd.nu.edu.pk',
             to: email,
-            subject: 'Testing',
-            text: 'Body of your email'
+            subject: 'Email Verification',
+            html: `<p>Please click the link below to verify your email:</p><a href="http://localhost:3000/verify?token=${token}">Verify Email</a>`
         };
 
-        // Send email
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.error('Error sending email:', error);
