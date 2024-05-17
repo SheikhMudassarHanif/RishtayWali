@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Profile Form</title>
+<!-- <link rel="stylesheet" href="styles.css"> -->
+<style>body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f5f5f5;
+  justify-content: center;
+}
+#createProfile{
+  justify-content: center;
+  align-items: center;
+  margin-left: 120px;
+}
+#religionForm{
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+}
+
+.container {
+  width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.user-photo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.form-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.group-title {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.radio-label {
+  display: block;
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  color: #555;
+  line-height: 2;
+}
+
+.radio-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.checkmark {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 20px;
+  width: 20px;
+  border: 2px solid #00bcd4;
+  border-radius: 50%;
+}
+
+.radio-label:hover .checkmark {
+  background-color: #00bcd4;
+}
+
+.radio-label input:checked ~ .checkmark {
+  background-color: #00bcd4;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.radio-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.radio-label .checkmark:after {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fff;
+}
+
+
+/* Your existing CSS styles here */
+
+#personalForm {
+  display: none;
+}
+/* Your existing CSS styles here */
+
+/* Your existing CSS styles here */
+
+/* Your existing CSS styles here */
+
+.name-inputs,
+.dob-inputs {
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+}
+
+.name-inputs input {
+  flex: 1;
+  padding: 10px;
+  margin-right: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  justify-items: center;
+  justify-content: center;
+  
+  width: 100%;
+  height:200px;
+  font-size:40pt;
+}
+
+.dob-inputs input {
+  flex: 1;
+  width: calc(33.33% - 5px);
+  padding: 10px;
+ 
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  justify-items: center;
+  justify-content: center;
+
+}
+#firstName,#lastName{
+width: 300px;
+height: 40px;
+justify-items: center;
+  justify-content: center;
+}
+#day,#month,#year{
+  height: 40px;
+  margin-right: 10px;
+  justify-items: center;
+  justify-content: center;
+ 
+}
+#year{
+  width: 100px;
+}
+.button-group {
+  margin-top: 20px;
+}
+
+button {
+  background-color: #00bcd4;
+  color: #fff;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+button:hover {
+  background-color: #0097a7;
+}
+
+
+/* Your existing CSS styles here */
+
+.container {
+  width: 400px;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.form-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.group-title {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+
+.dob-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.name-inputs input,
+.dob-inputs input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.name-inputs input:focus,
+.dob-inputs input:focus {
+  border-color: #00bcd4;
+  outline: none;
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+}
+.name-inputs {
+  justify-content: center;
+  justify-items: center;
+  display: flex;
+  flex-direction: column; /* Change to column layout */
+  margin-bottom: 10px;
+}
+
+.name-inputs input {
+  flex: 1;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 10px; /* Add margin to create space between inputs */
+}
+
+.name-inputs input:last-child {
+  margin-bottom: 0; /* Remove margin from the last input */
+}
+#personalForm {
+  display: none;
+  margin: 0 auto; /* Add margin auto to horizontally center the form */
+  max-width: 400px; /* Optionally, you can set a max-width to limit the form's width */
+}
+
+/* Religion Form CSS */
+#religionForm {
+  display: none;
+  margin: 0 auto;
+  max-width: 400px;
+}
+
+.select-input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.select-input:focus {
+  border-color: #00bcd4;
+  outline: none;
+}
+
+.select-group {
+  display: flex;
+  justify-content: space-between;
+}
+
+.select-group .select-input {
+  width: calc(50% - 5px);
+}
+
+#weight,#height{
+  width: 200px;
+  margin-bottom: 10px;
+  height: 30px;
+}
+/* Add margin-bottom to input groups */
+.input-group {
+  margin-bottom: 15px;
+}
+
+/* Style labels */
+.input-group label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Adjust select and input width */
+.select-input,
+input[type="number"] {
+  width: calc(50% - 5px); /* Adjust as needed */
+  margin-right: 10px; /* Adjust as needed */
+}
+
+/* Clearfix for select group */
+.select-group::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <!-- <img src="../../public/images/download.png" alt="User Photo" class="user-photo"> -->
+    <h2 class="form-title">Create Your Profile</h2>
+  </div>
+  <div id="blankPage">
+    <button type="button" id="createProfile" onclick="openProfileForm()">Create Profile</button>
+  </div>
+  <form id="profileForm" class="CreationForm" style="display: none;">
+    <div class="form-group">
+      <h3 class="group-title">This Profile is for</h3>
+      <label class="radio-label">
+        <input type="radio" name="profileFor" value="Myself" checked required>
+        <span class="checkmark"></span>
+        Myself
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="profileFor" value="My Son" required>
+        <span class="checkmark"></span>
+        My Son
+      </label>
+    </div>
+    <div class="form-group">
+      <h3 class="group-title">Gender</h3>
+      <label class="radio-label">
+        <input type="radio" name="gender" value="Male" checked required>
+        <span class="checkmark"></span>
+        Male
+      </label>
+      <label class="radio-label">
+        <input type="radio" name="gender" value="Female" required>
+        <span class="checkmark"></span>
+        Female
+      </label>
+    </div>
+    <div class="form-group">
+      <button type="button" onclick="goBackBlank()">Back</button>
+      <button type="button" onclick="validateProfileForm()">Continue</button>
+    </div>
+  </form>
+  <form id="personalForm" class="CreationForm" style="display: none;">
+    <div class="form-group">
+      <h3 class="group-title">Your Name</h3>
+      <div class="name-inputs">
+        <input type="text" id="firstName" name="firstName" placeholder="First Name" required><br>
+        <input type="text" id="lastName" name="lastName" placeholder="Last Name" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <h3 class="group-title">Date of Birth</h3>
+      <div class="dob-inputs">
+        <input type="number" id="day" name="day" placeholder="Day" min="1" max="31" required>
+        <input type="number" id="month" name="month" placeholder="Month" min="1" max="12" required>
+        <input type="number" id="year" name="year" placeholder="Year" min="1900" max="2024" required>
+      </div>
+    </div>
+    <div class="form-group">
+      <button type="button" onclick="goBackProfile()">Back</button>
+      <button type="button" onclick="validatePersonalForm()">Continue</button>
+    </div>
+  </form>
+  <!-- Religion Form -->
+  <form id="religionForm" class="CreationForm" style="display: none;">
+    <div class="form-group">
+      <h3 class="group-title">Your Religion</h3>
+      <select id="religion" name="religion" class="select-input" required>
+        <option value="" disabled selected>Select Religion</option>
+        <option value="Islam">Islam</option>
+        <option value="Christianity">Christianity</option>
+        <option value="Hinduism">Hinduism</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+    <div class="form-group">
+      <h3 class="group-title">Community</h3>
+      <select id="community" name="community" class="select-input" required>
+        <option value="" disabled selected>Select Community</option>
+        <option value="Urdu">Urdu</option>
+        <option value="English">English</option>
+        <option value="Chinese">Chinese</option>
+        <option value="German">German</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+    <div class="form-group">
+      <h3 class="group-title">Living in</h3>
+      <select id="country" name="country" class="select-input" required>
+        <option value="" disabled selected>Select Country</option>
+        <option value="Pakistan">Pakistan</option>
+        <option value="USA">USA</option>
+        <option value="UK">UK</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+    <div class="form-group">
+      <button type="button" onclick="goBackPersonal()">Back</button>
+      <button type="button" onclick="validateReligionForm()">Continue</button>
+    </div>
+  </form>
+<!-- Measure Form -->
+<form id="measureForm" class="CreationForm" style="display: none;">
+  <div class="form-group">
+    <h3 class="group-title">Measurements</h3>
+    <div class="input-group">
+      <label for="weight" class="input-label">Weight:</label>
+      <input type="number" id="weight" name="weight" class="input-field" placeholder="Enter weight in kg" required>
+    </div>
+    <div class="input-group">
+      <label for="height" class="input-label">Height:</label>
+      <input type="number" id="height" name="height" class="input-field" placeholder="Enter height in cm" required>
+    </div>
+    <h3 class="group-title">Color</h3>
+    <div class="select-group">
+      <label for="skinColor" class="input-label">Skin Color:</label>
+      <select id="skinColor" name="skinColor" class="select-input" required>
+        <option value="" disabled selected>Select Skin Color</option>
+        <option value="Brown">Brown</option>
+        <option value="Blue">Blue</option>
+        <option value="Black">Black</option>
+        <option value="White">White</option>
+        <option value="Golden">Golden</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+    <div class="select-group">
+      <label for="hairColor" class="input-label">Hair Color:</label>
+      <select id="hairColor" name="hairColor" class="select-input" required>
+        <option value="" disabled selected>Select Hair Color</option>
+        <option value="Brown">Brown</option>
+        <option value="Black">Black</option>
+        <option value="Blonde">Blonde</option>
+        <option value="Red">Red</option>
+        <option value="Gray">Gray</option>
+        <!-- Add more options as needed -->
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="button" onclick="goBackReligion()" class="form-button">Back</button>
+    <button type="button" onclick="validateMeasureForm()">Continue</button>
+  </div>
+</form>
+<!-- Lifestyle Form -->
+<form id="lifestyleForm" class="CreationForm" style="display: none;">
+  <div class="form-group">
+    <h3 class="group-title">Occupation</h3>
+    <select id="occupation" name="occupation" class="select-input" required>
+      <option value="" disabled selected>Select Occupation</option>
+      <option value="Student">Student</option>
+      <option value="Service">Service</option>
+      <option value="Business">Business</option>
+      <option value="Retired">Retired</option>
+      <option value="Unemployed">Unemployed</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <h3 class="group-title">Education Level</h3>
+    <select id="educationLevel" name="educationLevel" class="select-input" required>
+      <option value="" disabled selected>Select Education Level</option>
+      <option value="Bachelors">Bachelors</option>
+      <option value="Masters">Masters</option>
+      <option value="PhD">PhD</option>
+      <option value="O Levels">O Levels</option>
+      <option value="A Levels">A Levels</option>
+      <option value="None">None</option>
+    </select>
+  </div>
+  <div class="form-group">
+    <h3 class="group-title">Exercise Habits</h3>
+    <select id="exerciseHabits" name="exerciseHabits" class="select-input" onchange="toggleSportsOptions()" required>
+      <option value="" disabled selected>Select Exercise Habits</option>
+      <option value="None">None</option>
+      <option value="Occasionally">Occasionally</option>
+      <option value="Regularly">Regularly</option>
+    </select>
+  </div>
+  <div class="form-group" id="sportsOptions" style="display: none;">
+    <h3 class="group-title">Favorite Sports</h3>
+    <div class="checkbox-group">
+      <label class="checkbox-label">
+        <input type="checkbox" name="sports" value="Football"> Football
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="sports" value="Cricket"> Cricket
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="sports" value="Tennis"> Tennis
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="sports" value="Badminton"> Badminton
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="sports" value="Basketball"> Basketball
+      </label>
+      <label class="checkbox-label">
+        <input type="checkbox" name="sports" value="Swimming"> Swimming
+      </label>
+    </div>
+  </div>
+  <div class="form-group">
+    <button type="button" onclick="goBackMeasure()" class="form-button">Back</button>
+    <button type="submit" class="form-button" id="redirectButton">Submit</button>
+  </div>
+</form>
+</div>
+<script>
+
+
+  
+  const redirectButton = document.getElementById('redirectButton');
+  redirectButton.addEventListener('click', submitForm());
+  function submitForm() {
+    const formData = {
+      profileFor: document.querySelector('input[name="profileFor"]:checked').value,
+      gender: document.querySelector('input[name="gender"]:checked').value,
+      firstName: document.getElementById('firstName').value,
+      lastName: document.getElementById('lastName').value,
+      dob: {
+        day: parseInt(document.getElementById('day').value),
+        month: parseInt(document.getElementById('month').value),
+        year: parseInt(document.getElementById('year').value)
+      },
+      religion: document.getElementById('religion').value,
+      community: document.getElementById('community').value,
+      country: document.getElementById('country').value,
+      measurements: {
+        weight: parseInt(document.getElementById('weight').value),
+        height: parseInt(document.getElementById('height').value),
+        skinColor: document.getElementById('skinColor').value,
+        hairColor: document.getElementById('hairColor').value
+      },
+      occupation: document.getElementById('occupation').value,
+      educationLevel: document.getElementById('educationLevel').value,
+      exerciseHabits: document.getElementById('exerciseHabits').value,
+      sports: Array.from(document.querySelectorAll('input[name="sports"]:checked')).map(el => el.value)
+    };
+    fetch('/submitprofile', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    })
+    .then(response => response.json())
+    .then(data => {
+      console.log('Profile submitted successfully:', data);
+    })
+    .catch(error => {
+      console.error('Error submitting profile:', error);
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+// const redirectButton = document.getElementById('redirectButton');
+  //redirectButton.addEventListener('click', function() {
+  //const redirectUrl = 'http://localhost:3000//profilecreated'; 
+  //window.location.href = redirectUrl;
+  //}); 
+
+
+function openProfileForm() {
+  document.getElementById('blankPage').style.display = 'none';
+  document.getElementById('profileForm').style.display = 'block';
+}
+
+function goBackBlank() {
+  document.getElementById('profileForm').style.display = 'none';
+  document.getElementById('blankPage').style.display = 'block';
+}
+
+function validateProfileForm() {
+  const profileForm = document.getElementById('profileForm');
+  if (profileForm.checkValidity()) {
+    profileForm.style.display = 'none';
+    document.getElementById('personalForm').style.display = 'block';
+  } else {
+    profileForm.reportValidity();
+  }
+}
+
+function goBackProfile() {
+  document.getElementById('personalForm').style.display = 'none';
+  document.getElementById('profileForm').style.display = 'block';
+}
+
+function validatePersonalForm() {
+  const personalForm = document.getElementById('personalForm');
+  if (personalForm.checkValidity()) {
+    personalForm.style.display = 'none';
+    document.getElementById('religionForm').style.display = 'block';
+  } else {
+    personalForm.reportValidity();
+  }
+}
+
+function goBackPersonal() {
+  document.getElementById('religionForm').style.display = 'none';
+  document.getElementById('personalForm').style.display = 'block';
+}
+
+function validateReligionForm() {
+  const religionForm = document.getElementById('religionForm');
+  if (religionForm.checkValidity()) {
+    religionForm.style.display = 'none';
+    document.getElementById('measureForm').style.display = 'block';
+  } else {
+    religionForm.reportValidity();
+  }
+}
+
+function goBackReligion() {
+  document.getElementById('measureForm').style.display = 'none';
+  document.getElementById('religionForm').style.display = 'block';
+}
+
+function validateMeasureForm() {
+  const measureForm = document.getElementById('measureForm');
+  if (measureForm.checkValidity()) {
+    measureForm.style.display = 'none';
+    document.getElementById('lifestyleForm').style.display = 'block';
+  } else {
+    measureForm.reportValidity();
+  }
+}
+
+function goBackMeasure() {
+  document.getElementById('lifestyleForm').style.display = 'none';
+  document.getElementById('measureForm').style.display = 'block';
+}
+
+function toggleSportsOptions() {
+  const exerciseHabits = document.getElementById('exerciseHabits').value;
+  const sportsOptions = document.getElementById('sportsOptions');
+  if (exerciseHabits === 'Regularly') {
+    sportsOptions.style.display = 'block';
+  } else {
+    sportsOptions.style.display = 'none';
+  }
+}
+</script>
+</body>
+</html>
