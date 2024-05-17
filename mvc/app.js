@@ -41,11 +41,11 @@ mongoose.connect('mongodb://127.0.0.1:27017/RishtayWali', {
 });
 
 
-// app.use(session({
-//   secret: 'lms_nigga',
-//   resave: false,
-//   saveUninitialized: true
-// }));
+app.use(session({
+  secret: 'lms_nigga',
+  resave: false,
+  saveUninitialized: true
+}));
 
 
 

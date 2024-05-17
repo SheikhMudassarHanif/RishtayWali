@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Soulmate</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f5f5f5;
+    }
+    
+    .container {
+        text-align: center;
+    }
+    
+    .container h1 {
+        margin-bottom: 30px;
+    }
+    
+    .button-form {
+        display: inline-block;
+    }
+    
+    .browse-profile-button,
+    .create-profile-button {
+        background-color: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .browse-profile-button:hover,
+    .create-profile-button:hover {
+        background-color: #45a049;
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Rishtay Wali</h1>
+        <form action="find-soulmate" method="post" class="button-form">
+            <button class="browse-profile-button">Browse Profiles</button>
+        </form>
+        <form action="/Create-Profile" method="post" class="button-form">
+            <button class="create-profile-button">Create Profile</button>
+        </form>
+    </div>
+</body>
+</html>

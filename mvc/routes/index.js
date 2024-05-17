@@ -17,7 +17,9 @@ router.get('/save-record', formController.saveRecord);
 router.post('/submittedloginform', formController.handleLogin);
 router.post('/submitprofile',formController.saveProfile);
 router.post('/forgot-password',formController.forgetPassword);
-
+router.post('/find-soulmate',formController.DisplayAllProfiles);
+router.post('/Create-Profile',formController.CreateProfile);
+router.post('/true-love',formController.TrueLove);
 
 router.post('/reset-password', async (req, res) => {
     const { token, newPassword } = req.body;

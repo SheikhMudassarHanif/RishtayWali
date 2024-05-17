@@ -39,6 +39,11 @@ const profileSchema = new mongoose.Schema({
     type: String,
     required: true
   },
+  cnic:{
+type: Number,
+required: true,
+unique:true
+  },
   dateOfBirth: {
     day: {
       type: Number,

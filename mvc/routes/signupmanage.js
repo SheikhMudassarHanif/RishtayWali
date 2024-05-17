@@ -112,8 +112,9 @@ async function saveProfile(req, res) {
 
         const profile = new schemas.profileModel(req.body);
         await profile.save();
-        res.send("profile created");
+        // res.send("profile created");
         // res.status(201).send(profile);
+        res.status(200).render('partials/afterCreation');
     } catch (error) {
         console.error('Error saving profile:', error);
         res.status(400).send(error);
@@ -191,6 +192,101 @@ async function forgetPassword(req, res) {
 
 
 
+//   async function DisplayAllProfiles(req, res) {
+//     try {
+//         // Use await to get the distinct profiles
+//         const profiles = await schemas.profileModel.find().distinct('profile');
+        
+//         // Render the profiles in your EJS file
+//         console.log(profiles);
+//         res.render('pages/profiless', { profiles: profiles });
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).send('An error occurred');
+//     }
+// }
+
+
+
+async function DisplayAllProfiles(req, res) {
+    try {
+        console.log('Starting to fetch profiles');
+        
+        // Ensure the model is correct
+        if (!schemas || !schemas.profileModel) {
+            throw new Error('Profile model is not defined');
+        }
+
+        console.log('Model:', schemas.profileModel);
+
+        // Use await to get the profiles
+        const profiles = await schemas.profileModel.find();
+        
+        // Log the retrieved profiles
+        console.log('Retrieved profiles:', profiles);
+
+        if (!profiles || profiles.length === 0) {
+            console.log('No profiles found');
+            res.render('pages/profiless', { profiles: [] });
+            return;
+        }
+        
+        // Render the profiles in your EJS file
+        res.render('pages/profiless', { profiles: profiles });
+    } catch (err) {
+        console.error('Error occurred:', err);
+        res.status(500).send('An error occurred');
+    }
+}
+
+
+
+async function TrueLove(req,res) {
+    try {
+        // Ensure the model is correct
+        if (!schemas || !schemas.profileModel) {
+            throw new Error('Profile model is not defined');
+        }
+
+        // Get the current user's profile details or provide them manually
+        const currentUserProfile = await schemas.profileModel.findOne({ /* Your query to find the current user's profile */ });
+
+        if (!currentUserProfile) {
+            throw new Error('Current user profile not found');
+        }
+
+        // Query for profiles with the same country, same religion, and opposite gender
+        const Profiles = await schemas.profileModel.find({
+            country: currentUserProfile.country,
+            religion: currentUserProfile.religion,
+            gender: { $ne: currentUserProfile.gender } // Opposite gender
+        });
+
+        // Return the matched profiles
+        res.render('pages/secondlanding', { profiles: Profiles });
+    } catch (err) {
+        console.error('Error occurred:', err);
+        throw err; // Rethrow the error for handling at a higher level
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// In your route definition, you should now call the async function
+// app.get('/find-soulmate',);
 
 
 
@@ -211,9 +307,14 @@ async function forgetPassword(req, res) {
 
 
 
-
-
-
+async function CreateProfile(req,res){
+    try {
+res.status(200).render('pages/profilecreation');
+    }
+    catch (err) {
+        console.log('error ');
+    }
+}
 
 
 
@@ -246,8 +347,9 @@ async function handleLogin(req, res) {
         // Compare provided password with the stored hashed password
         const isMatch = await bcrypt.compare(password, user.password);
         if (isMatch) {
-            // req.session.userId = user._id;
-            res.render('pages/profilecreation');
+            
+            // res.render('pages/profilecreation');
+            res.render('pages/BrowseProfile');
         } else {
             res.status(401).send('Invalid email or password');
         }
@@ -262,5 +364,8 @@ module.exports = {
     saveRecord,
     handleLogin,
     saveProfile,
-    forgetPassword
+    forgetPassword,
+    DisplayAllProfiles,
+    CreateProfile,
+    TrueLove
 };

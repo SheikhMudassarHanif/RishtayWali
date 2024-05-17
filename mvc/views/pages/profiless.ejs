@@ -1,0 +1,211 @@
+<!-- 
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Profiles</title>
+  Bootstrap CSS 
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .profile-card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="my-4">Profiles</h1>
+        <div class="row">
+            <% profiles.forEach(function(profile) { %>
+                <div class="col-md-4">
+                    <div class="card profile-card">
+                        <div class="card-body">
+                            <h5 class="card-title"><%= profile.firstName %> <%= profile.lastName %></h5>
+                            <p class="card-text">
+                                <strong>Profile For:</strong> <%= profile.profileFor %><br>
+                                <strong>Gender:</strong> <%= profile.gender %><br>
+                                <strong>CNIC:</strong> <%= profile.cnic %><br>
+                                <strong>Date of Birth:</strong> <%= profile.dateOfBirth.day %>/<%= profile.dateOfBirth.month %>/<%= profile.dateOfBirth.year %><br>
+                                <strong>Religion:</strong> <%= profile.religion %><br>
+                                <strong>Community:</strong> <%= profile.community %><br>
+                                <strong>Country:</strong> <%= profile.country %><br>
+                                <strong>Weight:</strong> <%= profile.weight %> kg<br>
+                                <strong>Height:</strong> <%= profile.height %> cm<br>
+                                <strong>Skin Color:</strong> <%= profile.skinColor %><br>
+                                <strong>Hair Color:</strong> <%= profile.hairColor %><br>
+                                <strong>Occupation:</strong> <%= profile.occupation %><br>
+                                <strong>Education Level:</strong> <%= profile.educationLevel %><br>
+                                <strong>Exercise Habits:</strong> <%= profile.exerciseHabits %><br>
+                                <% if (profile.sports && profile.sports.length > 0) { %>
+                                    <strong>Sports:</strong> <%= profile.sports.join(', ') %>
+                                <% } %>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+    </div>
+
+    Bootstrap JS and dependencies 
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html> -->
+
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Profiles</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+    <form action="/true-love" method="post">
+<button class="button">Find Your True Love</button>
+    </form>
+<div class="w3-container">
+    <h2>Profiles</h2>
+
+    <div class="w3-row-padding">
+        <% profiles.forEach(function(profile) { %>
+            <div class="w3-col m4">
+                <div class="w3-card-4 w3-dark-grey w3-margin-bottom">
+
+                    <div class="w3-container w3-center">
+                        <h3>Profile</h3>
+                        <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" style="width:80%">
+                        <h5><%= profile.firstName %> <%= profile.lastName %></h5>
+                        <p>
+                            <strong>Profile For:</strong> <%= profile.profileFor %><br>
+                            <strong>Gender:</strong> <%= profile.gender %><br>
+                            <strong>CNIC:</strong> <%= profile.cnic %><br>
+                            <strong>Date of Birth:</strong> <%= profile.dateOfBirth.day %>/<%= profile.dateOfBirth.month %>/<%= profile.dateOfBirth.year %><br>
+                            <strong>Religion:</strong> <%= profile.religion %><br>
+                            <strong>Community:</strong> <%= profile.community %><br>
+                            <strong>Country:</strong> <%= profile.country %><br>
+                            <strong>Weight:</strong> <%= profile.weight %> kg<br>
+                            <strong>Height:</strong> <%= profile.height %> cm<br>
+                            <strong>Skin Color:</strong> <%= profile.skinColor %><br>
+                            <strong>Hair Color:</strong> <%= profile.hairColor %><br>
+                            <strong>Occupation:</strong> <%= profile.occupation %><br>
+                            <strong>Education Level:</strong> <%= profile.educationLevel %><br>
+                            <strong>Exercise Habits:</strong> <%= profile.exerciseHabits %><br>
+                            <% if (profile.sports && profile.sports.length > 0) { %>
+                                <strong>Sports:</strong> <%= profile.sports.join(', ') %>
+                            <% } %>
+                        </p>
+                        <div class="w3-section">
+                            <button class="w3-button w3-green">Accept</button>
+                            <button class="w3-button w3-red">Decline</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        <% }) %>
+    </div>
+</div>
+
+</body>
+</html>
+ -->
+
+ <!DOCTYPE html>
+ <html>
+ <head>
+     <title>Profiles</title>
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+     <style>
+        /* Add styles for the container */
+.container {
+    padding: 20px;
+}
+
+/* Center the button */
+.center-button {
+    text-align: center;
+}
+
+/* Style for the button */
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect for the button */
+.button:hover {
+    background-color: #45a049;
+}
+
+/* Styles for the profile cards */
+.profile-card {
+    width: 90%; /* Adjust the width as needed */
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+     </style>
+ </head>
+ <body>
+     <div class="container">
+         <form action="/true-love" method="post" class="center-button">
+             <button class="button">Find Your True Love</button>
+         </form>
+         <h2>Profiles</h2>
+ 
+         <div class="w3-row-padding">
+             <% profiles.forEach(function(profile) { %>
+                 <div class="w3-col s12 m6 l4">
+                     <div class="w3-card-4 w3-dark-grey w3-margin-bottom profile-card">
+ 
+                         <div class="w3-container w3-center">
+                    
+                             <img src="https://www.w3schools.com/w3images/avatar2.png" alt="Avatar" style="width:80%">
+                             <h5><%= profile.firstName %> <%= profile.lastName %></h5>
+                             <p>
+                                 <strong>Profile For:</strong> <%= profile.profileFor %><br>
+                                 <strong>Gender:</strong> <%= profile.gender %><br>
+                                 <strong>CNIC:</strong> <%= profile.cnic %><br>
+                                 <strong>Date of Birth:</strong> <%= profile.dateOfBirth.day %>/<%= profile.dateOfBirth.month %>/<%= profile.dateOfBirth.year %><br>
+                                 <strong>Religion:</strong> <%= profile.religion %><br>
+                                 <strong>Community:</strong> <%= profile.community %><br>
+                                 <strong>Country:</strong> <%= profile.country %><br>
+                                 <strong>Weight:</strong> <%= profile.weight %> kg<br>
+                                 <strong>Height:</strong> <%= profile.height %> cm<br>
+                                 <strong>Skin Color:</strong> <%= profile.skinColor %><br>
+                                 <strong>Hair Color:</strong> <%= profile.hairColor %><br>
+                                 <strong>Occupation:</strong> <%= profile.occupation %><br>
+                                 <strong>Education Level:</strong> <%= profile.educationLevel %><br>
+                                 <strong>Exercise Habits:</strong> <%= profile.exerciseHabits %><br>
+                                 <% if (profile.sports && profile.sports.length > 0) { %>
+                                     <strong>Sports:</strong> <%= profile.sports.join(', ') %>
+                                 <% } %>
+                             </p>
+                             <div class="w3-section">
+                                 <button class="w3-button w3-green">Accept</button>
+                                 <button class="w3-button w3-red">Decline</button>
+                             </div>
+                         </div>
+ 
+                     </div>
+                 </div>
+             <% }) %>
+         </div>
+     </div>
+ </body>
+ </html>
+ 
