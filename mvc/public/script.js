@@ -100,7 +100,7 @@ forgotPasswordLink.addEventListener("click", () => {
         <h2>Forgot Password</h2>
         <form action="/forgot-password" method="POST">
             <div class="input-field">
-                <input type="email" required>
+                <input type="email" name="email" required>
                 <label>Email</label>
             </div>
             <button type="submit">Submit</button>
@@ -132,7 +132,7 @@ closePopupBtn.addEventListener("click", () => {
             <h2>Login</h2>
             <form action="/submittedsignupform" method="POST">
                 <div class="input-field">
-                    <input type="text" required>
+                    <input type="text" name='email' required>
                     <label>Email</label>
                 </div>
                 <div class="input-field">

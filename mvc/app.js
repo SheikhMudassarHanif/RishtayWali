@@ -24,7 +24,7 @@ app.use(express.static("public"));
 
 // Use index router
 app.use("/", indexRouter);
-
+app.use('/api', indexRouter);
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
